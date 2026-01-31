@@ -1,0 +1,15 @@
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.AssemblyInfoInputs.cache
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.AssemblyInfo.cs
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.csproj.CoreCompileInputs.cache
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.sourcelink.json
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\bin\Debug\net10.0\TareaMoral.exe
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\bin\Debug\net10.0\TareaMoral.deps.json
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\bin\Debug\net10.0\TareaMoral.runtimeconfig.json
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\bin\Debug\net10.0\TareaMoral.dll
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\bin\Debug\net10.0\TareaMoral.pdb
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.dll
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\refint\TareaMoral.dll
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.pdb
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\TareaMoral.genruntimeconfig.cache
+C:\temp\2026-1-Progra-Avanzada-Viernes\TareaMoral\obj\Debug\net10.0\ref\TareaMoral.dll
