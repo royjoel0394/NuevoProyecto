@@ -32,39 +32,56 @@ public class Program
     public static decimal CalcularTarifaEnvio(decimal cantidadKg, string zonaOrigen, string zonaDestino, 
         Dictionary<(string Origen, string Destino), decimal> tarifasBase)
     {
-        // Validar cantidad de kilogramos
-        if (cantidadKg <= 0)
-        {
-            throw new ArgumentException("La cantidad debe ser mayor a cero");
-        }
+        return CalcularTarifaEnvio(cantidadKg, zonaOrigen, zonaDestino, tarifasBase, out _);
+    }
 
-        // Validar zona de origen
-        if (string.IsNullOrWhiteSpace(zonaOrigen))
+    public static decimal CalcularTarifaEnvio(decimal cantidadKg, string zonaOrigen, string zonaDestino, 
+        Dictionary<(string Origen, string Destino), decimal> tarifasBase, out string log)
+    {
+        try
         {
-            throw new ArgumentException("La zona de origen es requerida");
-        }
+            // Validar cantidad de kilogramos
+            if (cantidadKg <= 0)
+            {
+                throw new ArgumentException("La cantidad debe ser mayor a cero");
+            }
 
-        // Validar zona de destino
-        if (string.IsNullOrWhiteSpace(zonaDestino))
+            // Validar zona de origen
+            if (string.IsNullOrWhiteSpace(zonaOrigen))
+            {
+                throw new ArgumentException("La zona de origen es requerida");
+            }
+
+            // Validar zona de destino
+            if (string.IsNullOrWhiteSpace(zonaDestino))
+            {
+                throw new ArgumentException("La zona de destino es requerida");
+            }
+
+            // Si origen y destino son iguales, es envío gratuito
+            if (zonaOrigen.Equals(zonaDestino, StringComparison.OrdinalIgnoreCase))
+            {
+                log = $"En la fecha {DateTime.Now:dd-MM-yyyy HH:mm:ss} se procesó un envío de {cantidadKg:F2} kg desde {zonaOrigen} hacia {zonaDestino}. Costo total calculado: {0.00m:F2}.";
+                return 0.0m;
+            }
+
+            // Buscar tarifa en el diccionario
+            var key = (zonaOrigen.ToLower(), zonaDestino.ToLower());
+            if (tarifasBase.TryGetValue(key, out decimal tarifaBase))
+            {
+                decimal total = tarifaBase * cantidadKg;
+                log = $"En la fecha {DateTime.Now:dd-MM-yyyy HH:mm:ss} se procesó un envío de {cantidadKg:F2} kg desde {zonaOrigen} hacia {zonaDestino}. Costo total calculado: {total:F2}.";
+                return total;
+            }
+
+            // Si no existe la ruta, lanzar excepción
+            throw new KeyNotFoundException("No existe tarifa para la ruta especificada");
+        }
+        catch (Exception ex)
         {
-            throw new ArgumentException("La zona de destino es requerida");
+            log = $"Error: {ex.Message}";
+            throw;
         }
-
-        // Si origen y destino son iguales, es envío gratuito
-        if (zonaOrigen.Equals(zonaDestino, StringComparison.OrdinalIgnoreCase))
-        {
-            return 0.0m;
-        }
-
-        // Buscar tarifa en el diccionario
-        var key = (zonaOrigen.ToLower(), zonaDestino.ToLower());
-        if (tarifasBase.TryGetValue(key, out decimal tarifaBase))
-        {
-            return tarifaBase * cantidadKg;
-        }
-
-        // Si no existe la ruta, lanzar excepción
-        throw new KeyNotFoundException("No existe tarifa para la ruta especificada");
     }
 
     static void Main(string[] args)

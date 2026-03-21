@@ -35,6 +35,50 @@ public sealed class CalculoTarifaEnvioTests
     }
 
     [TestMethod]
+    public void CalcularTarifaEnvio_ConLog_ValoresValidos_GeneraLogCorrecto()
+    {
+        // Arrange
+        decimal cantidadKg = 5.0m;
+        string zonaOrigen = "norte";
+        string zonaDestino = "sur";
+
+        // Act
+        string log;
+        decimal resultado = Program.CalcularTarifaEnvio(cantidadKg, zonaOrigen, zonaDestino, _tarifasBase, out log);
+
+        // Assert
+        Assert.AreEqual(500.0m, resultado);
+        Assert.IsFalse(string.IsNullOrWhiteSpace(log));
+        StringAssert.StartsWith(log, "En la fecha ");
+        StringAssert.Contains(log, "se procesó un envío de 5");
+        StringAssert.Contains(log, "kg desde norte hacia sur.");
+        StringAssert.Contains(log, "Costo total calculado: 500");
+    }
+
+    [TestMethod]
+    public void CalcularTarifaEnvio_ConLog_CantidadNoValida_GeneraLogError()
+    {
+        // Arrange
+        decimal cantidadKg = 0.0m;
+        string zonaOrigen = "norte";
+        string zonaDestino = "sur";
+
+        // Act
+        string log = null!;
+        try
+        {
+            Program.CalcularTarifaEnvio(cantidadKg, zonaOrigen, zonaDestino, _tarifasBase, out log);
+            Assert.Fail("Se esperaba ArgumentException");
+        }
+        catch (ArgumentException ex)
+        {
+            // Assert
+            Assert.AreEqual("La cantidad debe ser mayor a cero", ex.Message);
+            Assert.AreEqual("Error: La cantidad debe ser mayor a cero", log);
+        }
+    }
+
+    [TestMethod]
     public void CalcularTarifaEnvio_MismaZona_RetornaCero()
     {
         // Arrange
