@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\2026-1-Progra-Avanzada-Viernes\\TareaMoral\\TareaMoral.csproj",
+      "projectUniqueName": "C:\\Github\\NuevoProyecto\\TareaMoral\\TareaMoral.csproj",
       "projectName": "TareaMoral",
-      "projectPath": "C:\\temp\\2026-1-Progra-Avanzada-Viernes\\TareaMoral\\TareaMoral.csproj",
+      "projectPath": "C:\\Github\\NuevoProyecto\\TareaMoral\\TareaMoral.csproj",
       "packagesPath": "C:\\Users\\royjo\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\2026-1-Progra-Avanzada-Viernes\\TareaMoral\\obj\\",
+      "outputPath": "C:\\Github\\NuevoProyecto\\TareaMoral\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\royjo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
