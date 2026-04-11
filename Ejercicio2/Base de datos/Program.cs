@@ -31,14 +31,14 @@ namespace ParqueoDatabaseExample
 
                 var dbConnection = host.Services.GetRequiredService<DatabaseConnection>();
 
-                // Obtener cadena de conexión de forma segura
-                string connectionString = dbConnection.GetConnectionStringFromEnvironment();
-
                 Console.WriteLine("🔗 Probando conexión...");
-                await dbConnection.TestConnectionAsync(connectionString);
+                await dbConnection.TestConnectionAsync();
 
                 Console.WriteLine("\n📊 Consultando datos del parqueo...");
-                await dbConnection.ConsultarDatosParqueoAsync(connectionString);
+                await dbConnection.ConsultarDatosParqueoAsync();
+
+                Console.WriteLine("\n📈 Generando estadísticas...");
+                await dbConnection.MostrarEstadisticasAsync();
 
                 Console.WriteLine("\n✅ Operación completada exitosamente!");
             }

@@ -42,11 +42,11 @@ VALUES
     (2, 5, '2026-04-09 08:00:00', '2026-04-09 16:30:00'),
     (1, 1, '2026-04-09 13:00:00', '2026-04-09 18:45:00'),
     
-    -- Registros del 10 de abril (actuales - algunos sin salida)
+    -- Registros del 10 de abril (completados)
     (2, 2, '2026-04-10 06:30:00', '2026-04-10 09:20:00'),
-    (1, 3, '2026-04-10 08:15:00', NULL), -- Aún en el parqueo
+    (1, 3, '2026-04-10 08:15:00', '2026-04-10 11:45:00'),
     (2, 4, '2026-04-10 09:00:00', '2026-04-10 13:30:00'),
-    (1, 5, '2026-04-10 10:00:00', NULL), -- Aún en el parqueo
+    (1, 5, '2026-04-10 10:00:00', '2026-04-10 13:30:00'),
     
     -- Registros adicionales del 7 de abril (pasado)
     (1, 1, '2026-04-07 15:30:00', '2026-04-07 18:00:00'),
@@ -55,7 +55,7 @@ VALUES
     -- Registros adicionales del 6 de abril (pasado)
     (1, 4, '2026-04-06 08:00:00', '2026-04-06 12:30:00'),
     (2, 3, '2026-04-06 10:15:00', '2026-04-06 11:00:00'),
-    (1, 5, '2026-04-06 14:00:00', NULL); -- Aún en el parqueo (histórico)
+    (1, 5, '2026-04-06 14:00:00', '2026-04-06 18:00:00');
 
 -- =====================================================
 -- RESUMEN DE DATOS INSERTADOS
@@ -72,8 +72,8 @@ VALUES
 --   - Parqueo Norte Heredia (Heredia) - $2.00/hora
 --
 -- Total de registros de ingreso: 15
---   - Registros completados (con salida): 12
---   - Registros activos (sin salida): 3
+--   - Registros completados (con salida): 15
+--   - Registros activos (sin salida): 0
 -- =====================================================
 
 -- Opcional: Ver los datos insertados

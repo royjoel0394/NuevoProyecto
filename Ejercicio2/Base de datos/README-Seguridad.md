@@ -148,9 +148,17 @@ WHERE i.fecha_hora_salida IS NOT NULL;
 6. **Usa RBAC** (Role-Based Access Control) en Azure
 7. **Rota** las contraseñas regularmente
 
-## 🚀 Despliegue en Azure
+## � Corrección de Estructura de Base de Datos
 
-Para producción, configura:
-- Azure App Service con Managed Identity
-- Azure Key Vault con permisos adecuados
-- Firewall rules en SQL Server para permitir conexiones desde App Service
+### Problema identificado
+La tabla `PRQ_Parqueo` en la base de datos del profesor no incluye la columna `nombre_de_provincia`, causando errores en Entity Framework Core.
+
+### Solución
+1. **Ejecuta** [corregir-tabla-parqueo.sql](corregir-tabla-parqueo.sql) para agregar la columna faltante
+2. **Verifica** con [verificar-estructuras.sql](verificar-estructuras.sql) que la estructura sea correcta
+3. **Prueba** la aplicación con `dotnet run`
+
+### Archivos relacionados
+- [README-Correccion-Parqueo.md](README-Correccion-Parqueo.md) - Instrucciones detalladas
+- [corregir-tabla-parqueo.sql](corregir-tabla-parqueo.sql) - Script de corrección
+- [verificar-estructuras.sql](verificar-estructuras.sql) - Verificación de estructuras
