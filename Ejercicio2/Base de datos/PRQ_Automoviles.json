@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "color": "Blanco",
+    "año": 2022,
+    "fabricante": "Toyota",
+    "tipo": "sedán"
+  },
+  {
+    "id": 2,
+    "color": "Negro",
+    "año": 2020,
+    "fabricante": "Honda",
+    "tipo": "4x4"
+  },
+  {
+    "id": 3,
+    "color": "Rojo",
+    "año": 2023,
+    "fabricante": "Yamaha",
+    "tipo": "moto"
+  },
+  {
+    "id": 4,
+    "color": "Azul",
+    "año": 2021,
+    "fabricante": "Ford",
+    "tipo": "hatchback"
+  },
+  {
+    "id": 5,
+    "color": "Gris",
+    "año": 2019,
+    "fabricante": "Chevrolet",
+    "tipo": "camioneta"
+  }
+]
