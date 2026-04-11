@@ -49,7 +49,10 @@ namespace ParqueoDatabaseExample
             }
 
             Console.WriteLine("\nPresiona cualquier tecla para salir...");
-            Console.ReadKey();
+            if (!Console.IsInputRedirected)
+            {
+                Console.ReadKey();
+            }
         }
     }
 }
