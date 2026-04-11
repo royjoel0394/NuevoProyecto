@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TareaMoral")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07fc2a0c90000163ddac87b7801d066be936738e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76b4bef3ecb4a4e69d8b38c33062dd3abacebc38")]
 [assembly: System.Reflection.AssemblyProductAttribute("TareaMoral")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TareaMoral")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

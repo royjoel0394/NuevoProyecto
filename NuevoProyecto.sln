@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TareaMoral", "TareaMoral\TareaMoral.csproj", "{6B8C449C-732E-D029-B01D-4F282EB967FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TarifasEnvio", "TarifasEnvio", "{E39523CB-86B1-2D66-87F9-26FC31DEDE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarifasEnvio.App", "TarifasEnvio\TarifasEnvio.App\TarifasEnvio.App.csproj", "{372D9393-9864-2C77-9980-4BD83C0EE691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarifasEnvio.Tests", "TarifasEnvio\TarifasEnvio.Tests\TarifasEnvio.Tests.csproj", "{FE891F47-1A5F-F035-EDFA-B5BCC3514942}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B8C449C-732E-D029-B01D-4F282EB967FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8C449C-732E-D029-B01D-4F282EB967FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8C449C-732E-D029-B01D-4F282EB967FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8C449C-732E-D029-B01D-4F282EB967FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{372D9393-9864-2C77-9980-4BD83C0EE691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{372D9393-9864-2C77-9980-4BD83C0EE691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{372D9393-9864-2C77-9980-4BD83C0EE691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{372D9393-9864-2C77-9980-4BD83C0EE691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE891F47-1A5F-F035-EDFA-B5BCC3514942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE891F47-1A5F-F035-EDFA-B5BCC3514942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE891F47-1A5F-F035-EDFA-B5BCC3514942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE891F47-1A5F-F035-EDFA-B5BCC3514942}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{372D9393-9864-2C77-9980-4BD83C0EE691} = {E39523CB-86B1-2D66-87F9-26FC31DEDE59}
+		{FE891F47-1A5F-F035-EDFA-B5BCC3514942} = {E39523CB-86B1-2D66-87F9-26FC31DEDE59}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D12E8D6E-48D7-4378-B67C-F514E726C252}
+	EndGlobalSection
+EndGlobal
