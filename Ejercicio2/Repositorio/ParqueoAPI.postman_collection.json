@@ -1,0 +1,380 @@
+{
+  "info": {
+    "name": "Parqueo API",
+    "description": "API REST para gestionar Automóviles, Parqueos e Ingresos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Automoviles",
+      "item": [
+        {
+          "name": "GET /api/automoviles - Obtener todos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/automoviles"
+          }
+        },
+        {
+          "name": "GET /api/automoviles/{id} - Por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/1",
+              "path": ["api", "automoviles", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/automoviles/color/{color} - Por color",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/color/Rojo",
+              "path": ["api", "automoviles", "color", "Rojo"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/automoviles/fabricante/{fabricante} - Por fabricante",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/fabricante/Toyota",
+              "path": ["api", "automoviles", "fabricante", "Toyota"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/automoviles/tipo/{tipo} - Por tipo",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/tipo/Sedan",
+              "path": ["api", "automoviles", "tipo", "Sedan"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/automoviles/rango-anio - Por rango de año",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/rango-anio?añoInicio=2020&añoFin=2023",
+              "path": ["api", "automoviles", "rango-anio"],
+              "query": [
+                {"key": "añoInicio", "value": "2020"},
+                {"key": "añoFin", "value": "2023"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /api/automoviles - Crear",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/automoviles",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"color\": \"Rojo\",\n  \"año\": 2023,\n  \"fabricante\": \"Toyota\",\n  \"tipo\": \"Sedán\"\n}"
+            }
+          }
+        },
+        {
+          "name": "PUT /api/automoviles/{id} - Actualizar",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/1",
+              "path": ["api", "automoviles", "1"]
+            },
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"color\": \"Azul\",\n  \"año\": 2024,\n  \"fabricante\": \"Honda\",\n  \"tipo\": \"SUV\"\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/automoviles/{id} - Eliminar",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/automoviles/1",
+              "path": ["api", "automoviles", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Parqueos",
+      "item": [
+        {
+          "name": "GET /api/parqueos - Obtener todos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/parqueos"
+          }
+        },
+        {
+          "name": "GET /api/parqueos/{id} - Por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/1",
+              "path": ["api", "parqueos", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/parqueos/provincia/{provincia} - Por provincia",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/provincia/San Jose",
+              "path": ["api", "parqueos", "provincia", "San Jose"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/parqueos/nombre/{nombre} - Por nombre",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/nombre/Central",
+              "path": ["api", "parqueos", "nombre", "Central"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/parqueos/rango-precio - Por rango precio",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/rango-precio?min=5&max=20",
+              "path": ["api", "parqueos", "rango-precio"],
+              "query": [
+                {"key": "min", "value": "5"},
+                {"key": "max", "value": "20"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /api/parqueos - Crear",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/parqueos",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Parqueo Central\",\n  \"nombreDeProvincia\": \"San José\",\n  \"precioPorHora\": 10.50\n}"
+            }
+          }
+        },
+        {
+          "name": "PUT /api/parqueos/{id} - Actualizar",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/1",
+              "path": ["api", "parqueos", "1"]
+            },
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Parqueo Norte\",\n  \"nombreDeProvincia\": \"Alajuela\",\n  \"precioPorHora\": 15.00\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/parqueos/{id} - Eliminar",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/parqueos/1",
+              "path": ["api", "parqueos", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ingresos",
+      "item": [
+        {
+          "name": "GET /api/ingresos - Obtener todos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/ingresos"
+          }
+        },
+        {
+          "name": "GET /api/ingresos/{consecutivo} - Por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/1",
+              "path": ["api", "ingresos", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/ingresos/precio-parqueo/{idParqueo} - Precio por hora",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/precio-parqueo/1",
+              "path": ["api", "ingresos", "precio-parqueo", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/ingresos/por-tipo - Por tipo con fechas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/por-tipo?tipoAutomovil=Sedan&desde=2023-01-01&hasta=2025-12-31",
+              "path": ["api", "ingresos", "por-tipo"],
+              "query": [
+                {"key": "tipoAutomovil", "value": "Sedan"},
+                {"key": "desde", "value": "2023-01-01"},
+                {"key": "hasta", "value": "2025-12-31"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /api/ingresos/por-provincia - Por provincia con fechas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/por-provincia?provincia=San Jose&desde=2023-01-01&hasta=2025-12-31",
+              "path": ["api", "ingresos", "por-provincia"],
+              "query": [
+                {"key": "provincia", "value": "San Jose"},
+                {"key": "desde", "value": "2023-01-01"},
+                {"key": "hasta", "value": "2025-12-31"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /api/ingresos - Crear",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/ingresos",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idAutomovil\": 1,\n  \"idParqueo\": 1,\n  \"fechaHoraEntrada\": \"2024-01-15T10:00:00\"\n}"
+            }
+          }
+        },
+        {
+          "name": "PUT /api/ingresos/{consecutivo} - Actualizar (salida)",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/1",
+              "path": ["api", "ingresos", "1"]
+            },
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fechaHoraSalida\": \"2024-01-15T12:30:00\"\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/ingresos/{consecutivo} - Eliminar",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/1",
+              "path": ["api", "ingresos", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Casos de Error",
+      "item": [
+        {
+          "name": "GET /api/automoviles/999 - 404 No encontrado",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/automoviles/999"
+          }
+        },
+        {
+          "name": "POST /api/automoviles - 400 Datos inválidos",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/automoviles",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"color\": \"\",\n  \"año\": 2023,\n  \"fabricante\": \"\",\n  \"tipo\": \"Sedán\"\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/automoviles/1 - 409 Conflicto (tiene ingresos)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/automoviles/1"
+          }
+        },
+        {
+          "name": "GET /api/parqueos/999 - 404 No encontrado",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/parqueos/999"
+          }
+        },
+        {
+          "name": "POST /api/parqueos - 400 Precio inválido",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/parqueos",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Parqueo\",\n  \"nombreDeProvincia\": \"San José\",\n  \"precioPorHora\": -10\n}"
+            }
+          }
+        },
+        {
+          "name": "GET /api/ingresos/999 - 404 No encontrado",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/ingresos/999"
+          }
+        },
+        {
+          "name": "GET /api/ingresos/por-tipo - 400 Tipo requerido",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/ingresos/por-tipo?desde=2023-01-01&hasta=2025-12-31",
+              "query": [
+                {"key": "desde", "value": "2023-01-01"},
+                {"key": "hasta", "value": "2025-12-31"}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
