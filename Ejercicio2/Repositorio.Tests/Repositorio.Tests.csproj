@@ -15,10 +15,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Repositorio\Repositorio.csproj" />
+    <ProjectReference Include="..\Base de datos\ParqueoDatabase.csproj" />
   </ItemGroup>
 
 </Project>
