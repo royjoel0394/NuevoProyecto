@@ -159,7 +159,7 @@ public class SqlAutomovilRepositoryTests
         var result = await repository.GetByYearRangeAsync(2020, 2020);
 
         Assert.Single(result);
-        Assert.Equal(2020, result.First().Año);
+        Assert.Equal(2020, result.First().Ano);
     }
 
     #endregion

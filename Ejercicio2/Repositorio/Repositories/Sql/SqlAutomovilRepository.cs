@@ -31,7 +31,7 @@ namespace Ejercicio2.Repositorio.Repositories.Sql
 
         public async Task<IReadOnlyList<PrqAutomovile>> GetByYearRangeAsync(int yearFrom, int yearTo, CancellationToken cancellationToken = default)
             => await _context.PrqAutomoviles
-                .Where(x => x.Año >= yearFrom && x.Año <= yearTo)
+                .Where(x => x.Ano >= yearFrom && x.Ano <= yearTo)
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
 

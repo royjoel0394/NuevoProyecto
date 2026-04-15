@@ -29,7 +29,7 @@ public class AutomovilesController : ControllerBase
     {
         var auto = await _repository.GetByIdAsync(id);
         if (auto == null)
-            return NotFound(new { message = $"Automóvil con ID {id} no encontrado" });
+            return NotFound(new { message = $"Automovil con ID {id} no encontrado" });
 
         return Ok(MapToDto(auto));
     }
@@ -56,9 +56,9 @@ public class AutomovilesController : ControllerBase
     }
 
     [HttpGet("rango-anio")]
-    public async Task<ActionResult<IEnumerable<AutomovilDto>>> GetByYearRange([FromQuery] int añoInicio, [FromQuery] int añoFin)
+    public async Task<ActionResult<IEnumerable<AutomovilDto>>> GetByYearRange([FromQuery] int anoInicio, [FromQuery] int anoFin)
     {
-        var automoviles = await _repository.GetByYearRangeAsync(añoInicio, añoFin);
+        var automoviles = await _repository.GetByYearRangeAsync(anoInicio, anoFin);
         return Ok(MapToDto(automoviles));
     }
 
@@ -66,9 +66,7 @@ public class AutomovilesController : ControllerBase
     public async Task<ActionResult<AutomovilDto>> Create([FromBody] CreateAutomovilDto dto)
     {
         if (dto == null) 
-            return BadRequest(new { message = "Datos inválidos" });
-
-        dto.NormalizeAño();
+            return BadRequest(new { message = "Datos invalidos" });
 
         if (string.IsNullOrWhiteSpace(dto.Color) || 
             string.IsNullOrWhiteSpace(dto.Fabricante) || 
@@ -80,7 +78,7 @@ public class AutomovilesController : ControllerBase
         var auto = new PrqAutomovile
         {
             Color = dto.Color,
-            Año = dto.Año,
+            Ano = dto.Ano,
             Fabricante = dto.Fabricante,
             Tipo = dto.Tipo
         };
@@ -95,12 +93,10 @@ public class AutomovilesController : ControllerBase
     {
         var existing = await _repository.GetByIdAsync(id);
         if (existing == null)
-            return NotFound(new { message = $"Automóvil con ID {id} no encontrado" });
+            return NotFound(new { message = $"Automovil con ID {id} no encontrado" });
 
         if (dto == null) 
-            return BadRequest(new { message = "Datos inválidos" });
-
-        dto.NormalizeAño();
+            return BadRequest(new { message = "Datos invalidos" });
 
         if (string.IsNullOrWhiteSpace(dto.Color) || 
             string.IsNullOrWhiteSpace(dto.Fabricante) || 
@@ -110,7 +106,7 @@ public class AutomovilesController : ControllerBase
         }
 
         existing.Color = dto.Color;
-        existing.Año = dto.Año;
+        existing.Ano = dto.Ano;
         existing.Fabricante = dto.Fabricante;
         existing.Tipo = dto.Tipo;
 
@@ -130,7 +126,7 @@ public class AutomovilesController : ControllerBase
     {
         var existing = await _repository.GetByIdAsync(id);
         if (existing == null)
-            return NotFound(new { message = $"Automóvil con ID {id} no encontrado" });
+            return NotFound(new { message = $"Automovil con ID {id} no encontrado" });
 
         try
         {
@@ -147,7 +143,7 @@ public class AutomovilesController : ControllerBase
     {
         Id = auto.Id,
         Color = auto.Color,
-        Año = auto.Año,
+        Ano = auto.Ano,
         Fabricante = auto.Fabricante,
         Tipo = auto.Tipo
     };

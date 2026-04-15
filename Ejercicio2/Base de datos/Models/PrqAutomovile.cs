@@ -17,8 +17,8 @@ namespace ParqueoDatabaseExample.Models
         [StringLength(50)]
         public string Color { get; set; } = null!;
 
-        [Column("año")]
-        public int Año { get; set; }
+        [Column("ano")]
+        public int Ano { get; set; }
 
         [Column("fabricante")]
         [StringLength(100)]

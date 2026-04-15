@@ -25,7 +25,7 @@ namespace Ejercicio2.Repositorio.Repositories.Json
             => Task.FromResult(Items.Where(x => x.Color.Contains(color, StringComparison.OrdinalIgnoreCase)).ToList() as IReadOnlyList<PrqAutomovile>);
 
         public Task<IReadOnlyList<PrqAutomovile>> GetByYearRangeAsync(int yearFrom, int yearTo, CancellationToken cancellationToken = default)
-            => Task.FromResult(Items.Where(x => x.Año >= yearFrom && x.Año <= yearTo).ToList() as IReadOnlyList<PrqAutomovile>);
+            => Task.FromResult(Items.Where(x => x.Ano >= yearFrom && x.Ano <= yearTo).ToList() as IReadOnlyList<PrqAutomovile>);
 
         public Task<IReadOnlyList<PrqAutomovile>> GetByManufacturerAsync(string manufacturer, CancellationToken cancellationToken = default)
             => Task.FromResult(Items.Where(x => x.Fabricante.Contains(manufacturer, StringComparison.OrdinalIgnoreCase)).ToList() as IReadOnlyList<PrqAutomovile>);

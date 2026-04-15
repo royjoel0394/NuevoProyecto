@@ -57,7 +57,7 @@ namespace ParqueoDatabaseExample
 
                 foreach (var auto in automoviles)
                 {
-                    Console.WriteLine($"ID: {auto.Id}, {auto.Fabricante} {auto.Tipo} {auto.Color} ({auto.Año})");
+                    Console.WriteLine($"ID: {auto.Id}, {auto.Fabricante} {auto.Tipo} {auto.Color} ({auto.Ano})");
                 }
 
                 // Consulta de parqueos
