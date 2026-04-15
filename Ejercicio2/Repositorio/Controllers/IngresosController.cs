@@ -93,7 +93,7 @@ public class IngresosController : ControllerBase
 
         await _repository.InsertAsync(ingreso);
 
-        return CreatedAtAction(nameof(GetById), new { consecutive = ingreso.Consecutivo }, MapToDto(ingreso));
+        return CreatedAtAction(nameof(GetById), new { consecutivo = ingreso.Consecutivo }, MapToDto(ingreso));
     }
 
     [HttpPut("{consecutivo}")]

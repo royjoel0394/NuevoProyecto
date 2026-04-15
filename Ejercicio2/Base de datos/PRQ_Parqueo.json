@@ -1,14 +1,16 @@
 [
   {
-    "id": 1,
-    "nombre_de_provincia": "San José",
-    "nombre": "Centro Parqueo San José",
-    "precio_por_hora": 2.50
+    "Id": 1,
+    "NombreDeProvincia": null,
+    "Nombre": "Centro Parqueo San Jos\u00E9",
+    "PrecioPorHora": 0,
+    "PrqIngresoAutomoviles": []
   },
   {
-    "id": 2,
-    "nombre_de_provincia": "Heredia",
-    "nombre": "Parqueo Norte Heredia",
-    "precio_por_hora": 2.00
+    "Id": 2,
+    "NombreDeProvincia": null,
+    "Nombre": "Parqueo Norte Heredia",
+    "PrecioPorHora": 0,
+    "PrqIngresoAutomoviles": []
   }
 ]

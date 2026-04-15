@@ -5,6 +5,7 @@ using Ejercicio2.Repositorio.Configuration;
 using Ejercicio2.Repositorio.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -30,15 +31,30 @@ static class Program
         builder.Services.AddSingleton<IConfiguration>(configuration);
         builder.Services.AddRepositorio(configuration);
         builder.Services.AddControllers();
+        
+        builder.WebHost.ConfigureKestrel(options =>
+        {
+            options.ListenAnyIP(5000);
+            options.ListenAnyIP(5001, listenOptions =>
+            {
+                listenOptions.UseHttps();
+            });
+        });
 
         var app = builder.Build();
 
         app.UseAuthorization();
         app.MapControllers();
 
-        Console.WriteLine("Iniciando Parking API...");
-        Console.WriteLine("API disponible en: http://localhost:5000");
+        Console.WriteLine("=================================");
+        Console.WriteLine("  Parking API iniciada");
+        Console.WriteLine("=================================");
+        Console.WriteLine("Endpoints disponibles:");
+        Console.WriteLine("  - GET    http://localhost:5000/api/automoviles");
+        Console.WriteLine("  - GET    http://localhost:5000/api/parqueos");
+        Console.WriteLine("  - GET    http://localhost:5000/api/ingresos");
+        Console.WriteLine("=================================");
         
-        await app.RunAsync("http://localhost:5000");
+        await app.RunAsync();
     }
 }

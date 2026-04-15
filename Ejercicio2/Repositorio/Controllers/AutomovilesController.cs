@@ -65,6 +65,11 @@ public class AutomovilesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<AutomovilDto>> Create([FromBody] CreateAutomovilDto dto)
     {
+        if (dto == null) 
+            return BadRequest(new { message = "Datos inválidos" });
+
+        dto.NormalizeAño();
+
         if (string.IsNullOrWhiteSpace(dto.Color) || 
             string.IsNullOrWhiteSpace(dto.Fabricante) || 
             string.IsNullOrWhiteSpace(dto.Tipo))
@@ -91,6 +96,11 @@ public class AutomovilesController : ControllerBase
         var existing = await _repository.GetByIdAsync(id);
         if (existing == null)
             return NotFound(new { message = $"Automóvil con ID {id} no encontrado" });
+
+        if (dto == null) 
+            return BadRequest(new { message = "Datos inválidos" });
+
+        dto.NormalizeAño();
 
         if (string.IsNullOrWhiteSpace(dto.Color) || 
             string.IsNullOrWhiteSpace(dto.Fabricante) || 
