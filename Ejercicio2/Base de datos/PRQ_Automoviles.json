@@ -4,34 +4,47 @@
     "Color": "Blanco",
     "Ano": 2022,
     "Fabricante": "Toyota",
-    "Tipo": "sedan"
+    "Tipo": "sedan",
+    "PrqIngresoAutomoviles": []
   },
   {
     "Id": 2,
     "Color": "Negro",
     "Ano": 2020,
     "Fabricante": "Honda",
-    "Tipo": "4x4"
+    "Tipo": "4x4",
+    "PrqIngresoAutomoviles": []
   },
   {
     "Id": 3,
     "Color": "Rojo",
     "Ano": 2023,
     "Fabricante": "Yamaha",
-    "Tipo": "moto"
+    "Tipo": "moto",
+    "PrqIngresoAutomoviles": []
   },
   {
     "Id": 4,
     "Color": "Azul",
     "Ano": 2021,
     "Fabricante": "Ford",
-    "Tipo": "hatchback"
+    "Tipo": "hatchback",
+    "PrqIngresoAutomoviles": []
   },
   {
     "Id": 5,
     "Color": "Gris",
     "Ano": 2019,
     "Fabricante": "Chevrolet",
-    "Tipo": "camioneta"
+    "Tipo": "camioneta",
+    "PrqIngresoAutomoviles": []
+  },
+  {
+    "Id": 6,
+    "Color": "Rojo",
+    "Ano": 2024,
+    "Fabricante": "Toyota",
+    "Tipo": "Sedan",
+    "PrqIngresoAutomoviles": []
   }
 ]
