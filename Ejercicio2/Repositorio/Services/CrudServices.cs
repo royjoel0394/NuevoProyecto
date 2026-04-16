@@ -616,7 +616,7 @@ namespace Ejercicio2.Repositorio.Services
             try
             {
                 // ========== VALIDACIONES ==========
-                if (consecutivo <= 0)
+                if (consecutive <= 0)
                     return ApiResponse<bool>.Error("El consecutivo debe ser mayor a 0.");
 
                 // ========== VERIFICAR EXISTENCIA ==========
@@ -624,7 +624,7 @@ namespace Ejercicio2.Repositorio.Services
                     .FindAsync(new object[] { consecutive }, cancellationToken);
                 
                 if (entity == null)
-                    return ApiResponse<bool>.Error($"El ingreso con consecutivo {consecutivo} no existe.");
+                    return ApiResponse<bool>.Error($"El ingreso con consecutivo {consecutive} no existe.");
 
                 // ========== ELIMINACION ==========
                 _context.Set<PrqIngresoAutomovil>().Remove(entity);
@@ -634,7 +634,7 @@ namespace Ejercicio2.Repositorio.Services
             }
             catch (DbUpdateException ex)
             {
-                return ApiResponse<bool>.Error("Error al eliminar el ingreso.", new List<bool> { ex.Message });
+                return ApiResponse<bool>.Error("Error al eliminar el ingreso.", new List<string> { ex.Message });
             }
             catch (Exception ex)
             {

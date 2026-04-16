@@ -22,9 +22,19 @@ namespace Ejercicio2.Repositorio.Configuration
                 services.AddDbContext<ParqueoDbContext>(opt =>
                     opt.UseSqlServer(configuration.GetConnectionString("ParqueoDb")!));
 
-                services.AddScoped<IAutomovilRepository, SqlAutomovilRepository>();
-                services.AddScoped<IParqueoRepository, SqlParqueoRepository>();
-                services.AddScoped<IIngresoAutomovilRepository, SqlIngresoAutomovilRepository>();
+                // Usar repositorios con Stored Procedures si esta opcion esta habilitada
+                if (options.UseStoredProcedures)
+                {
+                    services.AddScoped<IAutomovilRepository, SqlAutomovilRepositorySp>();
+                    services.AddScoped<IParqueoRepository, SqlParqueoRepositorySp>();
+                    services.AddScoped<IIngresoAutomovilRepository, SqlIngresoAutomovilRepositorySp>();
+                }
+                else
+                {
+                    services.AddScoped<IAutomovilRepository, SqlAutomovilRepository>();
+                    services.AddScoped<IParqueoRepository, SqlParqueoRepository>();
+                    services.AddScoped<IIngresoAutomovilRepository, SqlIngresoAutomovilRepository>();
+                }
                 services.AddScoped<IUnitOfWork, SqlUnitOfWork>();
             }
             else

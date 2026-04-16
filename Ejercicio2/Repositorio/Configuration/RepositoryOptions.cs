@@ -7,5 +7,6 @@ namespace Ejercicio2.Repositorio.Configuration
         public string JsonAutomovilesFile { get; init; } = string.Empty;
         public string JsonParqueoFile { get; init; } = string.Empty;
         public string JsonIngresosFile { get; init; } = string.Empty;
+        public bool UseStoredProcedures { get; init; } = false;
     }
 }
